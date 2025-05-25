@@ -1,7 +1,7 @@
 GCC = gcc
 FLAGS = -lm
 
-FILES = main.c matriz.c utilidades_proceso.c
+FILES = mainProceso.c matriz.c utilidades_proceso.c
 PROGRAMA = pdispersa
 
 $(PROGRAMA):

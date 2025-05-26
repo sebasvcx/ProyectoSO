@@ -41,7 +41,11 @@
 #include "matriz.h"
 #include "utilidades_proceso.h"
 
-// Función que imprime cómo utilizar correctamente el programa
+/**
+ * @brief Imprime la forma correcta de usar el programa.
+ *
+ * @param nombrePrograma Nombre del ejecutable (argv[0]).
+ */
 void imprimirUso(const char* nombrePrograma) {
     printf("Uso: %s -f M -c N -a Narchivo -n Nprocesos -p porcentaje\n", nombrePrograma);
     printf("Donde:\n");

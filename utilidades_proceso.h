@@ -25,26 +25,55 @@
 #include <time.h>
 #include "matriz.h"
 
-// Estructura que representa el rango de trabajo asignado a un proceso hijo
+/**
+ * @struct TrabajoProceso
+ * @brief Representa el rango de trabajo asignado a un proceso hijo.
+ *
+ * @var filaInicio Fila inicial (inclusive) del bloque asignado.
+ * @var filaFin Fila final (exclusiva) del bloque asignado.
+ * @var idProceso Identificador lógico del proceso.
+ */
 typedef struct {
     int filaInicio; // Fila inicial del bloque asignado al proceso
     int filaFin;    // Fila final (no inclusiva)
     int idProceso;  // ID lógico del proceso dentro del conjunto creado
 } TrabajoProceso;
 
-// Divide la matriz entre procesos según el ID de cada uno, asignando un bloque por filas.
-// Devuelve una estructura con el rango de filas a procesar.
+/**
+ * @brief Divide la matriz entre procesos y asigna un bloque por filas.
+ *
+ * @param filas Número total de filas en la matriz.
+ * @param columnas Número total de columnas.
+ * @param numProcesos Total de procesos a crear.
+ * @param idProceso ID del proceso actual.
+ * @return Puntero a estructura TrabajoProceso con el rango asignado.
+ */
 TrabajoProceso* dividirTrabajoMatriz(int filas, int columnas, int numProcesos, int idProceso);
 
-// Crea múltiples procesos hijos para analizar porciones de la matriz de manera concurrente.
-// Devuelve el total de elementos diferentes de cero encontrados por todos los procesos.
+/**
+ * @brief Crea múltiples procesos hijos para trabajar sobre la matriz.
+ *
+ * @param numProcesos Número de procesos a crear.
+ * @param matriz Puntero a la matriz.
+ * @param trabajo Estructura de trabajo compartida.
+ * @return Total de elementos distintos de cero.
+ */
 int crearProcesosHijos(int numProcesos, const Matriz* matriz, TrabajoProceso* trabajo);
 
-// Espera a que todos los procesos hijos terminen y suma los resultados devueltos.
-// Maneja correctamente los códigos de salida, incluyendo el caso especial de conteo > 254.
+/**
+ * @brief Espera a que todos los procesos hijos terminen y recoge sus resultados.
+ *
+ * @param numProcesos Número de procesos hijos.
+ * @param hijos Array con los PID de los procesos hijos.
+ * @param pipes Matriz de pipes usados para comunicación.
+ * @return Total acumulado de elementos diferentes de cero.
+ */
 int esperarProcesosHijos(int numProcesos, pid_t* hijos, int pipes[][2]);
 
-// Calcular el tiempo de procesamiento
+/**
+ * @brief Obtiene el tiempo actual en microsegundos.
+ * @return Tiempo actual como valor long (microsegundos).
+ */
 long obtenerTiempoActual();
 
 #endif // UTILIDADES_PROCESO_H 

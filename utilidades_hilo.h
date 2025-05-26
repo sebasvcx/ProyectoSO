@@ -31,4 +31,10 @@ bool validar_argumentos(int argc,
                         int *numHilos,
                         int *porcentaje);
 
+/**
+ * @brief Obtiene el tiempo actual en microsegundos.
+ * @return Tiempo actual como valor long (microsegundos).
+ */
+long obtenerTiempoActual();
+
 #endif // UTILIDADES_HILO_H

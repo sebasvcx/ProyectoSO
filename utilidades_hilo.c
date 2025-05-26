@@ -7,6 +7,8 @@
  #include <stdio.h>
  #include <stdlib.h>
  #include <unistd.h>
+ #include <sys/time.h>
+ #include <time.h>
  #include <string.h>
  #include "utilidades_hilo.h"
 
@@ -56,3 +58,9 @@
     }
     return true;
  }
+
+ long obtenerTiempoActual() {
+    struct timeval tiempo;
+    gettimeofday(&tiempo, NULL);
+    return (tiempo.tv_sec * 1000000L) + tiempo.tv_usec;
+}

@@ -34,27 +34,30 @@ int main(int argc, char *argv[]){
     }
 
     //carga de matriz en oa memoria
-    int **matriz = leerMatrizDesdeArchivo(archivo, filas, columnas);
+    //int **matriz = leerMatrizDesdeArchivo(archivo, filas, columnas);
+    Matriz *matriz = leerMatrizDesdeArchivo(archivo, filas, columnas);
 
     if (matriz == NULL){
         fprintf(stderr, "Error al leer la matriz desde el archivo %s\n", archivo);
         return EXIT_FAILURE;
     }
 
-     // Conteo de ceros mediante hilos POSIX
-    int totalNoCeros = contar_no_ceros_con_hilos(matriz, numHilos);
+    long tiempoInicio = obtenerTiempoActual();
 
-    //calcular el porcentaje de ceros
-    double pctCeros = calcularPorcentajeCeros(matriz, totalNoCeros);
+     // Conteo de No-ceros mediante hilos POSIX
+    int totalNoCeros = contar_no_ceros_con_hilos(matriz, numHilos);
+    
+    long tiempoFin = obtenerTiempoActual();
 
     //mostrar los resultados
-    printf("La matriz '%s' tiene %.2f%% de ceros, ", archivo, pctCeros);
-    if (pctCeros >= (double)porcentaje) {
-        printf("por lo tanto, se considera dispersa.\n");
-    } else {
-        printf("por lo tanto, No se considera dispersa.\n");
-    }
+    // Imprimir información sobre la matriz y evaluar si es dispersa
+    imprimirInfoMatriz(matriz, totalNoCeros, porcentaje);
 
+    // Calcular tiempo de procesamiento e imprimirlo
+    double tiempoTotal = tiempoFin - tiempoInicio;
+    printf("Tiempo total de procesamiento: %6.f microsegundos\n", tiempoTotal);
+
+    //liberar estructura matriz
     liberarMatriz(matriz);
     return EXIT_SUCCESS;
 }

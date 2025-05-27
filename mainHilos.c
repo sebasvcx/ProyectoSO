@@ -1,3 +1,29 @@
+/************************************************************
+ * Título: hdispersa — Implementación con hilos
+ *
+ * Universidad: Pontificia Universidad Javeriana
+ * Fecha: 26 de mayo de 2025
+ * Autores: Thomas Arévalo Rodríguez, Sebastián Vargas Casquete,
+ *          Diego Fernando Castrillón Cortes
+ *
+ * Materia: Sistemas Operativos
+ * Tópico: Conteo concurrente de elementos de matriz usando POSIX threads
+ *
+ * Descripción:
+ *   Este programa contiene la función main para la versión con
+ *   hilos (hdispersa). Se encarga de parsear los argumentos,
+ *   cargar la matriz, lanzar/juntar los hilos y decidir si la
+ *   matriz es dispersa según el porcentaje de ceros.
+ *
+ * Uso:
+ *   make hdispersa
+ *   ./hdispersa -f <filas> -c <columnas>
+ *               -a <archivo> -n <numHilos> -p <porcentaje>
+ *
+ * Dependencias:
+ *   pthread.h, matriz.h, utilidades_hilo.h, hilo_logica.h
+ ************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,3 +1,24 @@
+/************************************************************
+ * File: hilo_logica.c
+ * Título: hilo_logica — Implementación de conteo con hilos
+ *
+ * Universidad: Pontificia Universidad Javeriana
+ * Fecha: 26 de mayo de 2025
+ * Autores: Thomas Arévalo Rodríguez, Sebastián Vargas Casquete,
+ *          Diego Fernando Castrillón Cortes
+ *
+ * Materia: Sistemas Operativos
+ * Tópico: Worker y función de creación/junción de hilos
+ *
+ * Descripción:
+ *   Implementa el worker que recorre su bloque de filas
+ *   contando elementos no cero y la función que reparte
+ *   las filas, lanza hilos y acumula sus resultados.
+ *
+ * Dependencias:
+ *   pthread.h, matriz.h, hilo_logica.h
+ ************************************************************/
+
 #include <pthread.h>
 #include <stdlib.h>
 #include "hilo_logica.h"

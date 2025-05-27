@@ -1,3 +1,23 @@
+/************************************************************
+ * File: hilo_logica.h
+ * Título: hilo_logica — Declaración de funciones para hilos
+ *
+ * Universidad: Pontificia Universidad Javeriana
+ * Fecha: 26 de mayo de 2025
+ * Autores: Thomas Arévalo Rodríguez, Sebastián Vargas Casquete,
+ *          Diego Fernando Castrillón Cortes
+ *
+ * Materia: Sistemas Operativos
+ * Tópico: Declaración de la función de conteo concurrente
+ *
+ * Descripción:
+ *   Provee la firma de la función que crea n hilos POSIX
+ *   para contar elementos distintos de cero en una matriz.
+ *
+ * Dependencias:
+ *   matriz.h, pthread.h
+ ************************************************************/
+
 #ifndef HILO_LOGICA_H
 #define HILO_LOGICA_H
 

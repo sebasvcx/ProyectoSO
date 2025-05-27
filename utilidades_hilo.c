@@ -1,7 +1,22 @@
 /************************************************************
- * @file utilidades_hilo.c
- * @brief Implementación de las utilidades de hdispersa,
- *        incluyendo validar_argumentos().
+ * File: utilidades_hilo.c
+ * Título: utilidades_hilo — Implementación de utilidades
+ *
+ * Universidad: Pontificia Universidad Javeriana
+ * Fecha: 26 de mayo de 2025
+ * Autores: Thomas Arévalo Rodríguez, Sebastián Vargas Casquete,
+ *          Diego Fernando Castrillón Cortes
+ *
+ * Materia: Sistemas Operativos
+ * Tópico: Función validar_argumentos()
+ *
+ * Descripción:
+ *   Implementa la rutina validar_argumentos() que usa getopt()
+ *   para extraer y comprobar filas, columnas, archivo,
+ *   número de hilos y porcentaje.
+ *
+ * Dependencias:
+ *   unistd.h, stdio.h, stdlib.h, string.h, utilidades_hilo.h
  ************************************************************/
 
  #include <stdio.h>

@@ -1,7 +1,6 @@
 # Makefile para Proyecto_SO
 
 CC       := gcc
-CFLAGS   := -std=c11
 LDFLAGS  := -lm
 THREADS  := -pthread
 
@@ -18,11 +17,11 @@ all: $(PROG_PROC) $(PROG_HILO)
 
 # --------------------------------------------------
 $(PROG_PROC): $(SRCS_PROC)
-	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+	$(CC) $^ -o $@ $(LDFLAGS)
 
 # --------------------------------------------------
 $(PROG_HILO): $(SRCS_HILO)
-	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS) $(THREADS)
+	$(CC) $^ -o $@ $(LDFLAGS) $(THREADS)
 
 # --------------------------------------------------
 clean:

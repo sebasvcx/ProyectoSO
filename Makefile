@@ -1,7 +1,7 @@
 # Makefile para Proyecto_SO
 
 CC       := gcc
-CFLAGS   := -Wall -Wextra -std=c11
+CFLAGS   := -std=c11
 LDFLAGS  := -lm
 THREADS  := -pthread
 
